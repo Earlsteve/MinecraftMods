@@ -22,11 +22,14 @@ import java.util.stream.Collectors;
 @Mod("titan")
 public class ExampleMod
 {
-    public static final String MODID = "titan"
+    public static final String MODID = "titan";
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
     public ExampleMod() {
+        Registration.register();
+
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
