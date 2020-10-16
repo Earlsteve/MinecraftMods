@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 @Mod("titan")
 public class ExampleMod
 {
+    public static final String MODID = "titan"
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -69,8 +70,7 @@ public class ExampleMod
     public void onServerStarting(FMLServerStartingEvent event) {
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
-    }
-
+    }/*
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
@@ -81,4 +81,5 @@ public class ExampleMod
             LOGGER.info("HELLO from Register Block");
         }
     }
+    */
 }
