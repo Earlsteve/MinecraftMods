@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package client.titan;
 
 import Titan.RegistryHandler;
 import Titan.TitanSword;
@@ -24,10 +24,11 @@ import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleMod.MODID)
+
+@Mod("titan")
 public class ExampleMod
-{
-    public static final String MODID = "exampleMod" ;
+{    public static final String MODID = "titan";
+
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -35,6 +36,9 @@ public class ExampleMod
 
 
     public ExampleMod() {
+        Registration.register();
+
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -55,7 +59,7 @@ public class ExampleMod
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
 
-       TitanSword = new TitanSword(4,  20, 1.0, new Item.Properties().maxDamage() );
+        TitanSword = new TitanSword(4,  20, 1.0, new Item.Properties().maxDamage() );
 
 
     }
@@ -83,8 +87,7 @@ public class ExampleMod
     public void onServerStarting(FMLServerStartingEvent event) {
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
-    }
-
+    }/*
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
@@ -95,4 +98,6 @@ public class ExampleMod
             LOGGER.info("HELLO from Register Block");
         }
     }
+    */
+
 }
