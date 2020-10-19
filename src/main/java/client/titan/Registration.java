@@ -1,5 +1,6 @@
 package client.titan;
 
+import common.ModItems;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -10,5 +11,7 @@ public class Registration {
 
     public static void register(){
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+
+        ModItems.register();
     }
 }
