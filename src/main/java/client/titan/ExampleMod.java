@@ -52,7 +52,6 @@ public class ExampleMod
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
 
-        //TitanSword = new TitanSword(4,  20, 1.0, new Item.Properties().maxDamage() );
 
 
     }
