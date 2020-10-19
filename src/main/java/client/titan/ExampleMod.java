@@ -1,14 +1,8 @@
 package client.titan;
 
-import Titan.RegistryHandler;
-import Titan.TitanSword;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -32,7 +26,7 @@ public class ExampleMod
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public static SwordItem TitanSword;
+    //public static SwordItem TitanSword;
 
 
     public ExampleMod() {
@@ -51,7 +45,6 @@ public class ExampleMod
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-        RegistryHandler.init();
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -59,7 +52,7 @@ public class ExampleMod
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
 
-        TitanSword = new TitanSword(4,  20, 1.0, new Item.Properties().maxDamage() );
+        //TitanSword = new TitanSword(4,  20, 1.0, new Item.Properties().maxDamage() );
 
 
     }
@@ -72,7 +65,7 @@ public class ExampleMod
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
         // some example code to dispatch IMC to another mod
-        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
+        InterModComms.sendTo("titan", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
     }
 
     private void processIMC(final InterModProcessEvent event)
