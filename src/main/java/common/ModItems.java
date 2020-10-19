@@ -9,6 +9,9 @@ import net.minecraftforge.registries.DeferredRegister;
 public class ModItems {
     public static final RegistryObject<Item> TITAN_INGOT = Registration.ITEMS.register("titan_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
-    
 
+  //nothing in it only for "classloading"
+public static void register(){
+
+}
 }
