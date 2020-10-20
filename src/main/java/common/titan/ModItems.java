@@ -12,6 +12,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import tools.ModItemTier;
 
 public class ModItems {
+    public static final RegistryObject<Item> TITAN_ORE = Registration.ITEMS.register("titan_ore",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+
     public static final RegistryObject<Item> TITAN_INGOT = Registration.ITEMS.register("titan_ingot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
