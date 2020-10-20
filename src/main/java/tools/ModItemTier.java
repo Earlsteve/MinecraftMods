@@ -1,6 +1,6 @@
 package tools;
 
-import common.ModItems;
+import common.titan.ModItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
@@ -10,9 +10,6 @@ public enum ModItemTier implements IItemTier {
     TITAN(3,900,7.0F,3.0F,12, () -> {
         return Ingredient.fromItems(ModItems.TITAN_SWORD.get());
     });
-
-
-
     private final int harvestLevel;
     private final int maxUses;
     private final float efficiency;

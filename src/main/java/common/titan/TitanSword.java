@@ -1,4 +1,4 @@
-package Titan;
+package common.titan;
 
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.SwordItem;

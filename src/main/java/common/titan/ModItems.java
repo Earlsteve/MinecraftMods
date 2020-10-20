@@ -1,4 +1,4 @@
-package common;
+package common.titan;
 
 import client.titan.ExampleMod;
 import client.titan.Registration;
