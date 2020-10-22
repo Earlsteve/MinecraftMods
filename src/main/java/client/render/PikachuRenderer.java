@@ -14,6 +14,8 @@ public class PikachuRenderer extends MobRenderer<PikachuEntity, PikachuModel<Pik
 
     public PikachuRenderer(EntityRendererManager p_i50961_1_) {
         super(p_i50961_1_, new PikachuModel<>(), 0.7F);
+
+        //hi
     }
 
     @Override
