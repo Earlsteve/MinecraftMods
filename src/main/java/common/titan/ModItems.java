@@ -3,6 +3,8 @@ package common.titan;
 import client.titan.ExampleMod;
 import client.titan.Registration;
 import javafx.scene.control.Tab;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -17,6 +19,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> TITAN_SWORD = Registration.ITEMS.register("titan_sword",
             () -> new SwordItem(ModItemTier.TITAN, 2, -2.4F, new Item.Properties().group(ItemGroup.COMBAT)));
+
+
   //nothing in it only for "classloading"
 public static void register(){
 
