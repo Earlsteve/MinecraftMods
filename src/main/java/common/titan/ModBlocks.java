@@ -15,9 +15,8 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final RegistryObject<Block> TITAN_ORE =registerBlockAsItem("titan_ore",
-            ()-> new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(33f, 454f).harvestLevel(3).sound(SoundType.CROP)));
+            ()-> new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(13f, 44f).harvestLevel(1).sound(SoundType.CROP)));
 
-    public static void register(){}
 
    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         return Registration.BLOCKS.register(name, block);
@@ -28,7 +27,9 @@ public class ModBlocks {
         RegistryObject<T> x = registerBlock(name, block);
         //change block to Item
         Registration.ITEMS.register(name, ()-> new BlockItem(x.get(), new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)));
-
         return x;
     }
+
+
+    public static void register(){}
 }
