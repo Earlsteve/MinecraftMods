@@ -6,34 +6,63 @@ import entities.PikachuEntity;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.model.QuadrupedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
+import net.minecraft.util.math.MathHelper;
 
 public class PikachuModel <T extends PikachuEntity>extends EntityModel<T>
 {
-    private final ModelRenderer bone;
-    private final ModelRenderer bb_main;
+    private final ModelRenderer head;
+    private final ModelRenderer body;
+    private final ModelRenderer legFrontRight;
+    private final ModelRenderer legBackRight;
+    private final ModelRenderer legFrontLeft;
+    private final ModelRenderer legBackLeft;
 
     public PikachuModel() {
-        textureWidth = 16;
-        textureHeight = 16;
+        textureWidth = 64;
+        textureHeight = 64;
 
-        bone = new ModelRenderer(this);
-        bone.setRotationPoint(0.0F, 24.0F, 0.0F);
+        head = new ModelRenderer(this);
+        head.setRotationPoint(0.0F, 9.0F, -3.0F);
+        head.setTextureOffset(0, 20).addBox(-3.0F, -3.0F, -3.0F, 6.0F, 3.0F, 3.0F, 0.0F, false);
+        head.setTextureOffset(0, 7).addBox(-3.0F, -4.0F, -3.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+        head.setTextureOffset(6, 0).addBox(2.0F, -4.0F, -3.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 
+        body = new ModelRenderer(this);
+        body.setRotationPoint(0.0F, 24.0F, 0.0F);
+        body.setTextureOffset(0, 0).addBox(-4.0F, -15.0F, -5.0F, 8.0F, 10.0F, 10.0F, 0.0F, false);
+        body.setTextureOffset(8, 26).addBox(-1.0F, -10.0F, 5.0F, 2.0F, 2.0F, 2.0F, 0.0F, false);
 
-        bb_main = new ModelRenderer(this);
-        bb_main.setRotationPoint(0.0F, 24.0F, 0.0F);
-        bb_main.setTextureOffset(-6, 2).addBox(-1.0F, -6.0F, -1.0F, 6.0F, 6.0F, 5.0F, 0.0F, false);
+        legFrontRight = new ModelRenderer(this);
+        legFrontRight.setRotationPoint(-3.0F, 19.0F, -4.0F);
+        legFrontRight.setTextureOffset(0, 0).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 5.0F, 2.0F, 0.0F, false);
+
+        legBackRight = new ModelRenderer(this);
+        legBackRight.setRotationPoint(3.0F, 19.0F, -4.0F);
+        legBackRight.setTextureOffset(18, 20).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 5.0F, 2.0F, 0.0F, false);
+
+        legFrontLeft = new ModelRenderer(this);
+        legFrontLeft.setRotationPoint(3.0F, 19.0F, 4.0F);
+        legFrontLeft.setTextureOffset(24, 25).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 5.0F, 2.0F, 0.0F, false);
+
+        legBackLeft = new ModelRenderer(this);
+        legBackLeft.setRotationPoint(-3.0F, 19.0F, 4.0F);
+        legBackLeft.setTextureOffset(0, 26).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 5.0F, 2.0F, 0.0F, false);
     }
 
     @Override
     public void setRotationAngles(T t, float v, float v1, float v2, float v3, float v4) {
+
     }
 
 
     @Override
     public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-        bone.render(matrixStack, buffer, packedLight, packedOverlay);
-        bb_main.render(matrixStack, buffer, packedLight, packedOverlay);
+        head.render(matrixStack, buffer, packedLight, packedOverlay);
+        body.render(matrixStack, buffer, packedLight, packedOverlay);
+        legFrontRight.render(matrixStack, buffer, packedLight, packedOverlay);
+        legBackRight.render(matrixStack, buffer, packedLight, packedOverlay);
+        legFrontLeft.render(matrixStack, buffer, packedLight, packedOverlay);
+        legBackLeft.render(matrixStack, buffer, packedLight, packedOverlay);
     }
 
     public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
